@@ -20,7 +20,7 @@ var out = console.log;
 var error = console.error;
 
 function exitWithUsage() {
-    readFile(__dirname + '/README.md').done(function (f) {
+    readFile('README.md').done(function (f) {
         var readme = f.toString();
 
         var usageStartTag = "<!--- BEGIN USAGE -->";

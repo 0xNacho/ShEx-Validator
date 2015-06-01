@@ -3,25 +3,31 @@ PREFIX ex: <http://ex.example/#>
 PREFIX foaf: <http://xmlns.com/foaf/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<Issue1>
-    ex:state        ex:unassigned ;
-    ex:reportedBy   <User2> ;
-    ex:reportedOn   "2013-01-23T10:18:00"^^xsd:dateTime ;
-    ex:reproducedBy <Thompson.J> ;
-    ex:reproducedOn "2013-01-23T11:00:00"^^xsd:dateTime ;
-#    ex:related      <Issue2>, <Issue3>
+
+<Person1>
+    foaf:name "Pedro" ;
+    foaf:lastname "García";
 .
 
-<User2>
-    foaf:givenName "Bob" ;
-    foaf:familyName "Smith" ;
-    foaf:mbox <mailto:bob@example.org>
+<Person2>
+    foaf:name "Paco" ;
+    foaf:lastname "Álvarez";
 .
 
-<Thompson.J>
-    foaf:givenName "Joe", "Joseph" ;
-    foaf:familyName "Thompson" ;
-    foaf:phone <tel:+456> ;
-    foaf:mbox <mailto:joe@example.org>
+<Car1>
+    ex:model "Renault Clio Sport";
+    ex:year 2011;
+.
+
+<Employee1>
+    foaf:name "Alberto" ;
+    foaf:lastname "Rodriguez";
+    ex:expert ex:car;
+.
+
+<CarFailure1>
+    ex:state    ex:unassigned;
+    ex:isOwnedBy    <Person2>;
+    ex:failureReportedOn    "2013-01-23T11:00:00"^^xsd:dateTime;
 .
 
