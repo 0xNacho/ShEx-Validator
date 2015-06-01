@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HeriotWattMEng2015/ShEx-validator"
+    "url": "https://github.com/0xNacho/ShEx-Validator"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HeriotWattMEng2015/ShEx-validator/issues"
+    "url": "https://github.com/0xNacho/ShEx-Validator/issues"
   },
-  "homepage": "https://github.com/HeriotWattMEng2015/ShEx-validator",
+  "homepage": "https://github.com/0xNacho/ShEx-Validator",
   "dependencies": {
     "exit": "^0.1.2",
     "minimist": "^1.1.0",
