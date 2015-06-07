@@ -7,11 +7,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <Person1>
     foaf:name "Pedro" ;
     foaf:lastname "García";
+    foaf:age 32;
 .
 
 <Person2>
     foaf:name "Paco" ;
     foaf:lastname "Álvarez";
+    foaf:age 32;
 .
 
 <Car1>
@@ -23,11 +25,28 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     foaf:name "Alberto" ;
     foaf:lastname "Rodriguez";
     ex:expert ex:car;
+    foaf:age 32;
+.
+
+<Employee2>
+    foaf:name "Ramón" ;
+    foaf:lastname "Perez";
+    ex:expert ex:car;
+    foaf:age 19;
 .
 
 <CarFailure1>
     ex:state    ex:unassigned;
     ex:isOwnedBy    <Person2>;
-    ex:failureReportedOn    "2013-01-23T11:00:00"^^xsd:dateTime;
+    ex:failureReportedOn    "2015-05-23T11:00:00"^^xsd:dateTime;
 .
+
+<CarFailure2> #ERROR -> It is not possible to assign two employees .This Car failure should not be recognized.
+    ex:state    ex:assigned;
+    ex:isOwnedBy    <Person1>;
+    ex:isAssignedTo <Employee1>, <Employee2>;
+    ex:failureReportedOn    "2015-05-23T11:00:00"^^xsd:dateTime;
+.
+
+
 

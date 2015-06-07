@@ -4,22 +4,23 @@ PREFIX foaf: <http://xmlns.com/foaf/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-start = <CarFailure> 
+start = <CarFailure>
 
-<CarFailure> {                           
-    ex:state (ex:unassigned ex:assigned),
-    ex:isAssignedTo @<Employee>?,
-    ex:isOwnedBy @<Person>,
+<CarFailure> {
+    ex:state (ex:unassigned ex:assigned), #Only 2 possible states allowed
+    ex:isAssignedTo @<Employee>?, # 1 or 0 values possibles
+    ex:isOwnedBy @<Person>, # Only 1 person allowed
     ex:failureReportedOn xsd:dateTime,
     ex:relatedFailures @<CarFailure>*
 }
 
 <Person> {
        foaf:name xsd:string+,
-       foaf:lastname xsd:string+
+       foaf:lastname xsd:string+,
+       foaf:age xsd:integer
 }
 
-<Car> { 
+<Car> {
     ex:model xsd:string+,
     ex:year xsd:integer
 }
@@ -27,5 +28,7 @@ start = <CarFailure>
 <Employee> {
     foaf:name xsd:string+,
     foaf:lastname xsd:string+,
-    ex:expert (ex:car ex:moto ex:truck)
+    foaf:age xsd:integer,
+    ex:expert (ex:car ex:motorbike ex:truck)
 }
+
